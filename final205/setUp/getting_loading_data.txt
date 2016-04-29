@@ -1,0 +1,11 @@
+cd data
+lynx https://www.kaggle.com/kaggle/sf-salaries/downloads/sf-salaries-release-2015-12-21-03-21-32.zip 
+
+unzip sf-salaries-release-2015-12-21-03-21-32.zip
+
+python - > python script
+tail -n +2 "/output/Salaries.csv" > salaries.csv 
+
+hdfs dfs -mkdir /user/w205/final
+hdfs dfs -mkdir /user/w205/final/salary
+hdfs dfs -put salaries.csv /user/w205/final/salary
